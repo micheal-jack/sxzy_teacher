@@ -27,16 +27,28 @@ export default new Router({
       name: 'ClassSchedule',
       component: resolve => require(['components/ClassSchedule/MyClassSchedule.vue'], resolve),
     },
-    //开始上课-选择班级
-    //开始上课-选择课程
-	//开始上课-课程详情电子白板
+    //开始上课-选择课程（直接用我的课程页面就可以了,把里面的查看课程改为开始上课，点击后跳转到选择课程对应的班级）
+    {
+      path: '/start_course',
+      name: 'StartCourse',
+      component: resolve => require(['components/Course/MyCourse.vue'], resolve)
+    },
 
-	//我的课程
+    //开始上课-选择班级
+    {
+      path: '/course_class/select',
+      name: 'CourseClassSelect',
+      component: resolve => require(['components/Course/ClassSelect.vue'], resolve)
+    },
+  	//开始上课-课程详情电子白板
+
+	 //我的课程
     {
       path: '/mycourse',
       name: 'MyCourse',
       component: resolve => require(['components/Course/MyCourse.vue'], resolve)
     },
+
     //练习首页
     {
       path: '/homework/:id',
@@ -45,6 +57,7 @@ export default new Router({
     },
 
     //题目详情页
+
     //练习结果统计
 
     //同学练习情况
